@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8 Secret Websites · TechBabe</title>
+<meta name="description" content="Secret websites so free they feel illegal: Browserling, Archive.ph, PairDrop and 5 bonus tools.">
+<meta property="og:title" content="8 Secret Websites, so free it feels illegal">
+<meta property="og:description" content="The 3 from the reel plus 5 bonus secret websites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E0E10;--ink2:#17171a;--gold:#F2C443;--burg:#8E1F33;--cream:#F4EFE6;--paper:#FBF7EF;--soft:#b9b2a8;--line:#2a2a2f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px 40px}
+
+/* ---------- caution tape ---------- */
+.tape{position:relative;height:46px;background:var(--gold);border-top:5px solid var(--ink);border-bottom:5px solid var(--ink);overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.45)}
+.tape span{position:absolute;top:0;bottom:0;display:flex;align-items:center;white-space:nowrap;font-family:"Bebas Neue",sans-serif;font-size:28px;letter-spacing:3px;color:var(--ink);animation:roll 18s linear infinite}
+.tape b{color:var(--burg);margin:0 18px}
+@keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tape.top{transform:rotate(-1.5deg);margin:18px -24px 0}
+
+/* ---------- hero: letter board ---------- */
+.hero{position:relative;margin-top:34px;text-align:center}
+.board{position:relative;display:inline-block;width:min(100%,560px);padding:24px 18px 18px;background:repeating-linear-gradient(0deg,#121212 0 7px,#1e1e1e 7px 9px);border:14px solid #B8875A;border-radius:10px;box-shadow:0 30px 60px rgba(0,0,0,.6),inset 0 0 30px rgba(0,0,0,.85);transform:rotate(-1.2deg)}
+.board .l{display:block;font-family:"Bebas Neue",sans-serif;font-size:clamp(54px,15vw,98px);line-height:.98;letter-spacing:.06em;color:#F4F1EA;text-shadow:0 3px 0 rgba(0,0,0,.65)}
+.board .l.g{color:var(--gold)}
+.board .l i{display:inline-block;font-style:normal}
+.part{position:absolute;right:-22px;top:-26px;background:var(--gold);color:var(--ink);border:4px solid var(--ink);font-family:"Bebas Neue";font-size:30px;letter-spacing:2px;padding:2px 14px 0;transform:rotate(12deg);box-shadow:5px 5px 0 var(--burg)}
+.sub{margin-top:22px;font-family:"Special Elite",monospace;font-size:20px;color:var(--cream)}
+.sub b{color:var(--gold);font-weight:400}
+.meta{margin-top:10px;font:500 12px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+
+/* ---------- section heads ---------- */
+.sec{display:flex;align-items:center;gap:12px;margin:50px 0 20px}
+.sec h2{font-family:"Bebas Neue";font-weight:400;font-size:34px;letter-spacing:.04em;color:#fff}
+.sec .tag{font:700 12px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;background:var(--burg);color:#fff;border-radius:6px;padding:5px 9px}
+.sec i{flex:1;height:3px;background:repeating-linear-gradient(90deg,var(--gold) 0 14px,transparent 14px 22px)}
+
+/* ---------- evidence cards ---------- */
+.grid{display:grid;gap:22px}
+.card{position:relative;background:var(--paper);color:var(--ink);border-radius:6px;padding:22px 20px 18px;box-shadow:0 18px 34px rgba(0,0,0,.5);transform:rotate(var(--r,0deg));transition:transform .2s}
+.card:hover{transform:rotate(0deg) translateY(-3px)}
+.card::before{content:"";position:absolute;left:50%;top:-11px;width:24px;height:24px;margin-left:-12px;border-radius:50%;background:var(--gold);border:3px solid #6b4f12;box-shadow:0 5px 8px rgba(0,0,0,.35)}
+.head{display:flex;align-items:center;gap:14px}
+.logo{flex:none;width:62px;height:62px;border-radius:15px;border:3px solid var(--ink);background:#fff;display:grid;place-items:center;overflow:hidden}
+.logo img{width:82%;height:82%;object-fit:contain}
+.logo.full img{width:100%;height:100%;object-fit:cover}
+.logo.txt{background:#FFF8E1;font-family:"Times New Roman",serif;font-weight:700;line-height:1;text-align:center;font-size:13px}
+.logo.txt span{color:var(--burg);font-size:11px}
+.exhibit{font-family:"Special Elite",monospace;font-size:13px;letter-spacing:.14em;color:#6b5a48}
+.name{font-family:"Bebas Neue";font-size:36px;line-height:.95;letter-spacing:.02em}
+.desc{margin-top:12px;font-size:15.5px;line-height:1.45;color:#3a352f}
+.url{margin-top:12px;font:500 13px "JetBrains Mono",monospace;color:#6b5a48;word-break:break-all}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:800 14.5px Inter,sans-serif;color:var(--cream);background:var(--ink);border:2px solid var(--ink);border-radius:10px;padding:10px 15px;text-decoration:none;cursor:pointer;box-shadow:3px 3px 0 var(--burg);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--burg)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--burg)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ok{background:var(--gold);color:var(--ink)}
+.stamp{position:absolute;right:14px;top:14px;width:78px;height:78px;border-radius:50%;border:4px solid var(--burg);color:var(--burg);display:grid;place-items:center;font-family:"Bebas Neue";font-size:26px;line-height:.9;text-align:center;transform:rotate(14deg);opacity:.85}
+@media(max-width:480px){.stamp{width:64px;height:64px;font-size:21px}.name{font-size:31px}}
+.all{display:flex;justify-content:center;margin-top:26px}
+.all .btn{background:var(--gold);color:var(--ink);border-color:var(--ink);font-size:16px;padding:13px 20px}
+
+/* ---------- follow block ---------- */
+.follow{margin-top:60px;position:relative;background:var(--cream);color:var(--ink);border-radius:20px;padding:24px 22px 0;overflow:hidden;display:grid;grid-template-columns:1fr 150px;gap:6px;align-items:end;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--burg)}
+.follow h2{font-family:"Bebas Neue";font-weight:400;font-size:36px;line-height:1}
+.follow h2 span{color:var(--burg)}
+.follow p{margin:8px 0 16px;color:#4a4540;font-size:15px}
+.socials{display:grid;gap:10px;padding-bottom:22px}
+.soc{display:flex;align-items:center;gap:12px;text-decoration:none;background:var(--ink);color:#fff;border-radius:12px;padding:10px 14px;transition:transform .15s}
+.soc:hover{transform:translateX(4px)}
+.soc .ico{display:grid;place-items:center;width:36px;height:36px}
+.soc .who{flex:1;display:grid}
+.soc small{font:500 10px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;opacity:.65}
+.soc b{font-weight:800;font-size:16px}
+.char{width:150px;height:auto;display:block}
+@media(max-width:430px){.follow{grid-template-columns:1fr}.char{justify-self:center;order:-1}}
+
+footer{margin-top:40px;text-align:center}
+footer .cta{font-family:"Special Elite",monospace;font-size:20px;color:var(--gold)}
+footer p{margin-top:10px;font:500 12px "JetBrains Mono",monospace;color:var(--soft);line-height:1.6}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);white-space:nowrap;background:var(--gold);color:var(--ink);font-family:"Bebas Neue";font-size:24px;letter-spacing:.06em;padding:10px 22px 6px;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--burg);transition:transform .3s cubic-bezier(.3,1.4,.5,1);z-index:9}
+.toast.on{transform:translate(-50%,0)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="tape top" aria-hidden="true"><span id="tape"></span></div>
+<div class="wrap">
+  <header class="hero">
+    <div class="board">
+      <span class="part">PART 2</span>
+      <span class="l g">8 SECRET</span>
+      <span class="l">WEBSITES</span>
+    </div>
+    <p class="sub">so free, it feels <b>illegal.</b></p>
+    <p class="meta">Case file · 3 from the reel + 5 bonus</p>
+  </header>
+
+  <div class="sec"><h2>From the reel</h2><span class="tag">Exhibit A–C</span><i></i></div>
+  <div class="grid" id="reel"></div>
+
+  <div class="sec"><h2>5 bonus secret sites</h2><span class="tag">+5</span><i></i></div>
+  <div class="grid" id="bonus"></div>
+
+  <div class="all"><button class="btn" id="copyAll">Copy all 8 links</button></div>
+
+  <section class="follow">
+    <div>
+      <h2>Case closed? <span>Follow for more.</span></h2>
+      <p>I share simple, useful tech every week. Come say hi.</p>
+      <div class="socials">
+        <a class="soc" href="https://www.instagram.com/techbabecodes" target="_blank" rel="noopener" aria-label="Instagram @techbabecodes"><span class="ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></span><span class="who"><small>Instagram</small><b>@techbabecodes</b></span><span aria-hidden="true">↗</span></a>
+        <a class="soc" href="https://www.instagram.com/techbabetalks" target="_blank" rel="noopener" aria-label="Instagram @techbabetalks"><span class="ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></span><span class="who"><small>Instagram</small><b>@techbabetalks</b></span><span aria-hidden="true">↗</span></a>
+        <a class="soc" href="https://youtube.com/@techbabecodes" target="_blank" rel="noopener" aria-label="YouTube @techbabecodes"><span class="ico"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z"/><path fill="#0E0E10" d="M9.6 15.6V8.4l6.2 3.6z"/></svg></span><span class="who"><small>YouTube</small><b>@techbabecodes</b></span><span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <img class="char" src="techbabe-character.webp" alt="TechBabe cartoon character" width="150" height="170">
+  </section>
+
+  <footer>
+    <div class="cta">Use them smart. Use them legal. ✦</div>
+    <p>Links open each site's official page. These are independent tools, not affiliated with TechBabe.<br>If you read a site often, consider supporting the writers.</p>
+  </footer>
+</div>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+const REEL=[
+  {n:"Browserling",u:"https://www.browserling.com",d:"Open suspicious links safely inside a disposable cloud browser.",logo:"logos/browserling.png",st:"ZERO<br>VIRUS"},
+  {n:"Archive.ph",u:"https://archive.ph",d:"Bypass \"Subscribe to Read\" paywalls on articles.",txt:true,st:"100%<br>FREE"},
+  {n:"PairDrop",u:"https://pairdrop.net",d:"Instant AirDrop between Android, iPhone, Windows and Mac. No app, no login.",logo:"logos/pairdrop.png",full:true,st:"NO<br>APP"},
+];
+const BONUS=[
+  {n:"VirusTotal",u:"https://www.virustotal.com",d:"Scan any suspicious file or link against 70+ antivirus engines before opening it.",logo:"logos/virustotal.png"},
+  {n:"JustDelete.me",u:"https://justdeleteme.xyz",d:"Direct links to delete your account on sites that hide the delete button.",logo:"logos/justdeleteme.png",full:true},
+  {n:"PDF24 Tools",u:"https://tools.pdf24.org",d:"Free, unlimited PDF editor and merger. No daily limits, no watermarks.",logo:"logos/pdf24.svg"},
+  {n:"Squoosh",u:"https://squoosh.app",d:"Google's free tool to shrink heavy images by up to 80% with no visible quality loss.",logo:"logos/squoosh.png",full:true},
+  {n:"Ninite",u:"https://ninite.com",d:"Install all your essential PC apps in one click, with ads and bloatware skipped.",logo:"logos/ninite.png"},
+];
+const tape=document.getElementById('tape');
+tape.innerHTML=Array.from({length:16},(_,i)=>(i%2?'DO NOT PAY':'ILLEGALLY FREE')+'<b>✦</b>').join('');
+const host=u=>u.replace(/^https?:\/\//,'').replace(/\/$/,'');
+function card(s,i,offset){
+  const n=String(i+offset).padStart(2,'0');
+  const logo=s.txt?`<div class="logo txt">archive<br><span>.today</span></div>`:`<div class="logo${s.full?' full':''}"><img src="${s.logo}" alt="${s.n} logo" width="62" height="62"></div>`;
+  return `<article class="card" style="--r:${(i%2?1:-1)*(.6+(i%3)*.3)}deg">
+    ${s.st?`<div class="stamp">${s.st}</div>`:''}
+    <div class="head">${logo}<div><div class="exhibit">EXHIBIT ${n}</div><div class="name">${s.n}</div></div></div>
+    <p class="desc">${s.d}</p>
+    <div class="url">${host(s.u)}</div>
+    <div class="row"><a class="btn" href="${s.u}" target="_blank" rel="noopener">Open site ↗</a><button class="btn ghost" data-u="${s.u}">Copy link</button></div>
+  </article>`;
+}
+document.getElementById('reel').innerHTML=REEL.map((s,i)=>card(s,i,1)).join('');
+document.getElementById('bonus').innerHTML=BONUS.map((s,i)=>card(s,i,4)).join('');
+const toast=document.getElementById('toast');let tm;
+function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tm);tm=setTimeout(()=>toast.classList.remove('on'),1600)}
+function copy(text,msg,btn){(navigator.clipboard?navigator.clipboard.writeText(text):Promise.reject()).then(done).catch(()=>{const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();try{document.execCommand('copy');done()}catch(e){say('Copy failed')}t.remove()});
+  function done(){say(msg);if(btn){const o=btn.textContent;btn.textContent='Copied ✓';btn.classList.add('ok');setTimeout(()=>{btn.textContent=o;btn.classList.remove('ok')},1400)}}}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-u]');if(b)copy(b.dataset.u,'Link copied!',b)});
+document.getElementById('copyAll').addEventListener('click',e=>copy([...REEL,...BONUS].map((s,i)=>`${i+1}. ${s.n}: ${s.u}`).join('\n'),'All 8 links copied!',e.currentTarget));
+</script>
+</body>
+</html>
