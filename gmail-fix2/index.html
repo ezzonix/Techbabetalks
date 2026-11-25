@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gmail Storage Fix · TechBabe</title>
+<meta name="description" content="Gemini Pro free / student plan ended and Gmail stopped receiving emails? The exact 2-step free fix: Google Photos Partner Sharing + 0 MB Auto-Forwarding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#EA4335; --dred:#C5221F; --blue:#4285F4; --yel:#FBBC04; --green:#34A853;
+    --ink:#202124; --sub:#5F6368; --line:#DADCE0; --bg:#F6F8FC; --white:#fff;
+    --sh:0 14px 34px rgba(32,33,36,.16),0 3px 8px rgba(32,33,36,.10);
+    --d-bg:#1F1F1F; --d-line:#3C4043; --d-tx:#E8EAED; --d-sub:#9AA0A6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:Outfit,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{max-width:980px;margin:0 auto;padding:0 16px}
+
+  /* ---- top bar ---- */
+  .top{position:sticky;top:0;z-index:30;background:rgba(246,248,252,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;gap:12px;height:62px}
+  .top b{font-weight:900;font-size:20px}
+  .prog{margin-left:auto;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:var(--sub)}
+  .bar{width:120px;height:10px;border-radius:5px;background:#E8EAED;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:var(--green);transition:width .4s}
+
+  /* ---- hero: same story as the reel ---- */
+  .hero{padding:40px 0 10px;text-align:center}
+  .pill{display:inline-flex;align-items:center;gap:16px;background:#fff;border-radius:40px;box-shadow:var(--sh);padding:12px 30px 12px 18px}
+  .pill h1{font-weight:900;font-size:clamp(44px,10vw,84px);letter-spacing:-2px;line-height:1}
+  .pill h1 span{color:#4796E3}
+  .row2{margin-top:16px;display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
+  .dark{background:var(--ink);color:#fff;font-weight:800;font-size:clamp(20px,4.6vw,30px);border-radius:22px;padding:8px 22px}
+  .stamp{display:inline-block;border:5px solid var(--red);color:var(--red);background:#fff;font-weight:900;font-size:clamp(22px,5vw,34px);letter-spacing:2px;border-radius:12px;padding:2px 14px;transform:rotate(-7deg);animation:slam .5s .4s both cubic-bezier(.2,1.6,.5,1)}
+  @keyframes slam{from{transform:rotate(-7deg) scale(2.4);opacity:0}to{transform:rotate(-7deg) scale(1);opacity:1}}
+  .stopped{margin-top:14px;display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:26px;box-shadow:var(--sh);padding:8px 22px;font-weight:900;font-size:clamp(22px,5vw,34px)}
+  .stopped span{color:var(--red)}
+  .lede{max-width:640px;margin:22px auto 0;color:var(--sub);font-size:18px;line-height:1.55}
+  .lede b{color:var(--ink)}
+  .two{margin:26px auto 0;max-width:760px;display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:720px){.two{grid-template-columns:1fr 1fr}}
+  .two a{display:flex;align-items:center;gap:14px;background:#fff;border-radius:24px;box-shadow:var(--sh);padding:14px 18px;text-decoration:none;font-weight:800;font-size:20px;transition:transform .2s}
+  .two a:hover{transform:translateY(-3px)}
+  .num{flex:none;width:46px;height:46px;border-radius:50%;color:#fff;display:grid;place-items:center;font-weight:900;font-size:24px}
+
+  /* ---- step sections ---- */
+  .step{margin:46px 0 0}
+  .step-h{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+  .step-h h2{font-weight:900;font-size:clamp(28px,6vw,40px);letter-spacing:-.5px;line-height:1.05}
+  .step-sub{color:var(--sub);font-size:17px;margin:0 0 18px 60px}
+  .note{display:flex;gap:12px;align-items:flex-start;background:#FEF7E0;border:2px solid #FDE293;border-radius:20px;padding:14px 18px;margin:0 0 18px;font-size:16px;line-height:1.5}
+  .note b{font-weight:800}
+
+  .card{background:#fff;border-radius:28px;box-shadow:var(--sh);padding:18px;margin-bottom:18px;display:grid;grid-template-columns:1fr;gap:18px;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+  .card.in{opacity:1;transform:none}
+  @media(min-width:820px){.card{grid-template-columns:1.05fr 1fr;align-items:center;padding:22px}}
+  .card-txt h3{display:flex;align-items:center;gap:12px;font-weight:900;font-size:24px;line-height:1.15}
+  .sn{flex:none;width:38px;height:38px;border-radius:12px;background:var(--c);color:#fff;display:grid;place-items:center;font-weight:900;font-size:20px}
+  .path{margin:14px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+  .chip{background:#F1F3F4;border-radius:12px;padding:6px 12px;font-weight:700;font-size:15px}
+  .chip.hl{background:#FEEFC3;box-shadow:inset 0 0 0 2px var(--yel)}
+  .arr{color:var(--sub);font-weight:900}
+  .card-txt p{margin-top:12px;color:#3C4043;font-size:16px;line-height:1.5}
+  .actions{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:99px;padding:11px 18px;font:800 15px Outfit,sans-serif;text-decoration:none;cursor:pointer;border:0}
+  .go{background:var(--blue);color:#fff}
+  .go:hover{background:#1A73E8}
+  .done{background:#F1F3F4;color:var(--sub)}
+  .done.on{background:#E6F4EA;color:#137333}
+
+  /* ---- device mocks ---- */
+  .stage{position:relative;border-radius:24px;background:radial-gradient(ellipse at 50% 40%,#1c2230,#0b0d12 60%,#000);padding:18px;min-height:330px;overflow:hidden}
+  .stage:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px}
+  .phone{position:relative;margin:0 auto;width:220px;height:400px;border-radius:30px;background:#111;padding:8px;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+  .browser{position:relative;margin:0 auto;width:100%;max-width:420px;border-radius:16px;background:#2D2E30;padding:30px 0 0;box-shadow:0 20px 50px rgba(0,0,0,.6);overflow:hidden}
+  .browser:before{content:"";position:absolute;left:12px;top:11px;width:9px;height:9px;border-radius:50%;background:#FF5F57;box-shadow:14px 0 #FEBC2E,28px 0 #28C840}
+  .browser .url{position:absolute;left:60px;right:12px;top:6px;height:19px;border-radius:10px;background:#3C4043;color:#bdc1c6;font-size:11px;line-height:19px;padding:0 10px;white-space:nowrap;overflow:hidden}
+  .scr{position:relative;width:100%;height:100%;border-radius:24px;background:#fff;overflow:hidden}
+  .browser .scr{border-radius:0;height:290px}
+  .screen{position:absolute;inset:0;opacity:0;transition:opacity .35s;padding:12px;font-size:13px}
+  .screen.on{opacity:1}
+  .tap{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;border:3px solid var(--blue);background:rgba(66,133,244,.18);pointer-events:none;animation:tap 1.2s infinite}
+  @keyframes tap{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+  .dots{position:relative;display:flex;justify-content:center;gap:8px;margin-top:14px}
+  .dots button{width:9px;height:9px;border-radius:5px;border:0;background:rgba(255,255,255,.3);cursor:pointer;transition:width .3s}
+  .dots button.on{width:26px;background:#fff}
+  .cap{position:relative;text-align:center;color:#fff;font-weight:700;font-size:15px;margin-top:10px;min-height:20px}
+  /* mock bits */
+  .m-top{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px}
+  .av{width:28px;height:28px;border-radius:50%;background:#F4511E;color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;margin-left:auto}
+  .grid3{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+  .grid3 i{aspect-ratio:1;border-radius:6px;display:block}
+  .li{display:flex;align-items:center;gap:10px;padding:9px 6px;border-bottom:1px solid #eee;font-weight:600}
+  .li.hl{background:#FEEFC3;border-radius:8px}
+  .sw{margin-left:auto;width:34px;height:18px;border-radius:9px;background:#BDC1C6;position:relative}
+  .sw:after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff}
+  .sw.on{background:var(--blue)}.sw.on:after{left:18px}
+  .mbtn{display:inline-block;background:var(--blue);color:#fff;border-radius:16px;padding:7px 14px;font-weight:800}
+  .field{border:1.5px solid var(--line);border-radius:8px;padding:7px 10px;margin-top:6px;color:var(--blue);font-weight:700}
+  .radio{display:flex;align-items:center;gap:8px;margin-top:8px;font-weight:600}
+  .radio i{width:14px;height:14px;border-radius:50%;border:2px solid #80868B;display:inline-block}
+  .radio i.on{border-color:var(--blue);box-shadow:inset 0 0 0 3px #fff;background:var(--blue)}
+  .gm{background:var(--d-bg);color:var(--d-tx)}
+  .gm .li{border-color:var(--d-line)}
+  .tabs{display:flex;gap:10px;border-bottom:1px solid var(--d-line);font-size:11px;color:var(--d-sub);padding:6px 0;white-space:nowrap;overflow:hidden}
+  .tabs b{color:#F28B82;border-bottom:2px solid #F28B82}
+  .dd{display:inline-block;border:2px solid #F28B82;color:#F28B82;background:rgba(242,139,130,.12);border-radius:8px;padding:5px 10px;font-weight:800;margin-top:6px}
+  .opts{margin-top:4px;background:#2D2E30;border-radius:10px;padding:4px 0;width:85%}
+  .opts div{padding:5px 10px;font-size:12px}
+  .opts .pick{color:#F28B82;font-weight:800;background:rgba(242,139,130,.18)}
+  .store{height:10px;border-radius:5px;background:#E8EAED;overflow:hidden;margin-top:6px}
+  .store i{display:block;height:100%}
+
+  /* ---- copy + follow ---- */
+  .done-box{margin:46px 0 0;background:#fff;border-radius:28px;box-shadow:var(--sh);padding:26px;text-align:center}
+  .done-box h2{font-weight:900;font-size:clamp(26px,5.5vw,38px)}
+  .done-box p{color:var(--sub);font-size:17px;margin-top:8px;line-height:1.5}
+  .copyall{margin-top:18px;border:0;cursor:pointer;background:var(--red);color:#fff;font:800 18px Outfit,sans-serif;border-radius:99px;padding:14px 26px;box-shadow:var(--sh)}
+  .follow{margin:22px 0 30px;background:#fff;border-radius:28px;box-shadow:var(--sh);padding:22px}
+  .follow h3{font-weight:900;font-size:26px;margin-bottom:12px}
+  .socials{display:grid;grid-template-columns:1fr;gap:10px}
+  @media(min-width:720px){.socials{grid-template-columns:repeat(3,1fr)}}
+  .soc{display:flex;align-items:center;gap:12px;text-decoration:none;background:#F1F3F4;border-radius:18px;padding:10px 14px;transition:transform .2s}
+  .soc:hover{transform:translateY(-3px)}
+  .soc .ic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--c);display:grid;place-items:center}
+  .soc b{display:block;font-size:17px;font-weight:800}.soc small{color:var(--sub)}
+  footer{text-align:center;color:var(--sub);font-size:14px;padding:6px 0 40px}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,150%);background:var(--ink);color:#fff;border-radius:20px;padding:12px 20px;font-weight:700;z-index:50;transition:transform .35s cubic-bezier(.2,1.4,.4,1)}
+  .toast.show{transform:translate(-50%,0)}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <svg width="34" height="26" viewBox="0 0 48 36"><path d="M4 36 H11 V17 L0 9 V32 Q0 36 4 36 Z" fill="#4285F4"/><path d="M37 36 H44 Q48 36 48 32 V9 L37 17 Z" fill="#34A853"/><path d="M37 3 V17 L48 9 V5 Q48 -1 42 1.5 Z" fill="#FBBC04"/><path d="M11 17 V3 L24 12.5 L37 3 V17 L24 26.5 Z" fill="#EA4335"/><path d="M0 5 V9 L11 17 V3 L6 0.6 Q0 -1 0 5 Z" fill="#C5221F"/></svg>
+  <b>Gmail Fix</b>
+  <div class="prog"><span id="pt">0 / 9 done</span><div class="bar"><i id="pb"></i></div></div>
+</div></div>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="pill">
+      <svg width="clamp" style="width:clamp(48px,11vw,86px);height:clamp(48px,11vw,86px)" viewBox="0 0 40 40"><defs><linearGradient id="gem" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4796E3"/><stop offset=".55" stop-color="#9177C7"/><stop offset="1" stop-color="#CA6673"/></linearGradient></defs><path d="M20 0 C21.5 11 29 18.5 40 20 C29 21.5 21.5 29 20 40 C18.5 29 11 21.5 0 20 C11 18.5 18.5 11 20 0 Z" fill="url(#gem)"/></svg>
+      <h1>Gemini <span>Pro</span></h1>
+    </div>
+    <div class="row2"><span class="dark">free / student plan</span><span class="stamp">CANCELLED</span></div>
+    <div><span class="stopped"><svg width="40" height="30" viewBox="0 0 48 36"><path d="M4 36 H11 V17 L0 9 V32 Q0 36 4 36 Z" fill="#4285F4"/><path d="M37 36 H44 Q48 36 48 32 V9 L37 17 Z" fill="#34A853"/><path d="M37 3 V17 L48 9 V5 Q48 -1 42 1.5 Z" fill="#FBBC04"/><path d="M11 17 V3 L24 12.5 L37 3 V17 L24 26.5 Z" fill="#EA4335"/><path d="M0 5 V9 L11 17 V3 L6 0.6 Q0 -1 0 5 Z" fill="#C5221F"/></svg>emails <span>stopped?</span></span></div>
+    <p class="lede">When the plan ends you drop back to <b>15 GB</b>. If you're over it, Gmail can't send or receive mail. Here's the exact <b>2-step free fix</b>. Tap through each mini screen to see where to tap, or hit <b>Open this setting</b> to jump straight there.</p>
+    <div class="two">
+      <a href="#step1"><span class="num" style="background:var(--blue)">1</span>Google Photos Partner Sharing</a>
+      <a href="#step2"><span class="num" style="background:var(--green)">2</span>0 MB Auto-Forwarding</a>
+    </div>
+  </section>
+
+  <section class="step" id="step1">
+    <div class="step-h"><span class="num" style="background:var(--blue)">1</span><h2>Free up space with Partner Sharing</h2></div>
+    <p class="step-sub">Move your photos to a new free Gmail, then delete them from the old one.</p>
+    <div id="s1"></div>
+  </section>
+
+  <section class="step" id="step2">
+    <div class="step-h"><span class="num" style="background:var(--green)">2</span><h2>0 MB Auto-Forwarding</h2></div>
+    <p class="step-sub">Every email and OTP to your old address lands in the new inbox.</p>
+    <div class="note"><span style="font-size:22px">💻</span><div>This setting <b>isn't in the Gmail app</b>. Open Gmail in a <b>laptop browser</b>, or in Chrome on your phone tap <b>⋮ → Desktop site</b>.</div></div>
+    <div id="s2"></div>
+  </section>
+
+  <div class="done-box">
+    <h2>✅ Done!</h2>
+    <p>Every email and OTP sent to your old address now goes straight to your new inbox, using <b>0 MB</b> on the old account.</p>
+    <button class="copyall" id="copyall">📋 Copy the full guide</button>
+  </div>
+
+  <div class="follow">
+    <h3>Follow TechBabe for more smart tech hacks 💻✨</h3>
+    <div class="socials">
+      <a class="soc" href="https://www.instagram.com/techbabecodes" target="_blank" rel="noopener" style="--c:#E1306C"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="12" cy="12" r="4" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="#fff"/></svg></span><span><b>@techbabecodes</b><small>Instagram</small></span></a>
+      <a class="soc" href="https://www.instagram.com/techbabetalks" target="_blank" rel="noopener" style="--c:#C13584"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="12" cy="12" r="4" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="#fff"/></svg></span><span><b>@techbabetalks</b><small>Instagram</small></span></a>
+      <a class="soc" href="https://youtube.com/@techbabecodes" target="_blank" rel="noopener" style="--c:#FF0033"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="#fff"/><path d="M10 9 L15.5 12 L10 15 Z" fill="#FF0033"/></svg></span><span><b>@techbabecodes</b><small>YouTube</small></span></a>
+    </div>
+  </div>
+  <footer>Made with 💙 by TechBabe · save this page so you don't lose the steps</footer>
+</div>
+<div class="toast" id="toast">Copied ✓</div>
+
+<script>
+const PHOTO = ['#AECBFA','#FDE293','#A8DAB5','#F6AEA9','#D7AEFB','#FCC934'];
+const grid = (n, fade) => '<div class="grid3">' + Array.from({length:n},(_,i)=>`<i style="background:${PHOTO[i%6]};opacity:${fade?.25:1}"></i>`).join('') + '</div>';
+const photosTop = '<div class="m-top"><svg width="22" height="22" viewBox="0 0 40 40"><path d="M20 20 V2 A9 9 0 0 1 20 20 Z" fill="#EA4335"/><path d="M20 20 H38 A9 9 0 0 1 20 20 Z" fill="#4285F4"/><path d="M20 20 V38 A9 9 0 0 1 20 20 Z" fill="#34A853"/><path d="M20 20 H2 A9 9 0 0 1 20 20 Z" fill="#FBBC04"/></svg>Photos<span class="av">C</span></div>';
+const gmTop = '<div class="m-top" style="color:#E8EAED"><svg width="22" height="17" viewBox="0 0 48 36"><path d="M4 36 H11 V17 L0 9 V32 Q0 36 4 36 Z" fill="#4285F4"/><path d="M37 36 H44 Q48 36 48 32 V9 L37 17 Z" fill="#34A853"/><path d="M37 3 V17 L48 9 V5 Q48 -1 42 1.5 Z" fill="#FBBC04"/><path d="M11 17 V3 L24 12.5 L37 3 V17 L24 26.5 Z" fill="#EA4335"/></svg>Gmail<span class="gear" style="margin-left:auto;font-size:18px">⚙︎</span></div>';
+
+// each card: title, path chips, text, link, device, screens [html, tapX%, tapY%, caption]
+const STEPS = {
+ s1: [
+  { t:'Open Partner Sharing (old account)', c:'var(--blue)', path:['Google Photos app','Profile icon','Photos settings','Sharing','Partner sharing'],
+    p:'In your <b>old</b> account, open the Google Photos app, tap your profile picture (top-right) and go to Photos settings → Sharing → Partner sharing.',
+    link:['https://photos.google.com/settings','Open Photos settings ↗'], dev:'phone', screens:[
+     [photosTop + grid(12), 86, 5, 'Tap your profile icon'],
+     [photosTop + '<div style="margin-top:14px"><div class="li">Manage your Google Account</div><div class="li hl">⚙︎ Photos settings</div><div class="li">Your data in Photos</div></div>', 50, 27, 'Photos settings'],
+     ['<div class="m-top">⚙︎ Settings</div><div style="margin-top:10px"><div class="li">Backup</div><div class="li">Notifications</div><div class="li hl">Sharing</div><div class="li">Memories</div></div>', 50, 36, 'Sharing'],
+     ['<div class="m-top">Sharing</div><div style="margin-top:10px"><div class="li hl">👥 Partner sharing</div><div class="li">Hidden from sharing</div><div class="li">Linked albums</div></div>', 50, 19, 'Partner sharing'] ] },
+  { t:'Invite your new Gmail, share All photos', c:'var(--blue)', path:['Add new Gmail','All photos','Send invitation'],
+    p:'Add your <b>new free Gmail</b> as the partner, choose <b>All photos</b>, and send the invite.',
+    link:['https://photos.google.com/settings','Open Photos settings ↗'], dev:'phone', screens:[
+     ['<div class="m-top">Choose partner</div><div class="field">you.new@gmail.com</div>', 50, 18, 'Enter your new Gmail'],
+     ['<div class="m-top">Share access to</div><div class="radio"><i class="on"></i>All photos</div><div class="radio"><i></i>Photos of specific people</div>', 22, 18, 'Select All photos'],
+     ['<div class="m-top">Review</div><p style="margin:10px 0;color:#5F6368">Partner: you.new@gmail.com<br>All photos</p><span class="mbtn">Send invitation</span>', 33, 30, 'Send invitation'] ] },
+  { t:'Accept & auto-save in the NEW account', c:'var(--blue)', path:['Accept invite','Save to your account','All photos'],
+    p:'Sign in to the <b>new</b> account, accept the invite, then turn ON <b>Save to your account → All photos</b> so the photos are really copied over.',
+    link:['https://photos.google.com/sharing','Open Photos sharing ↗'], dev:'phone', screens:[
+     ['<div class="m-top">🔔 Updates</div><div class="li hl">C invited you to Partner sharing</div><span class="mbtn" style="margin-top:10px">Accept</span>', 30, 30, 'Accept the invite'],
+     ['<div class="m-top">Partner settings</div><div class="li hl">Save to your account <span class="sw on"></span></div><div class="radio"><i class="on"></i>All photos</div>', 85, 19, 'Turn ON Save to your account'],
+     [photosTop + grid(12) + '<p class="ok" style="margin-top:8px;color:#137333;font-weight:800">✓ Photos saved to new account</p>', 50, 60, 'Photos copied over'] ] },
+  { t:'Delete from OLD account + empty Trash', c:'var(--red)', path:['Select all','Delete','Trash / Bin','Empty'],
+    p:'Once everything is saved in the new account, delete the photos from the <b>old</b> account and <b>empty the Trash / Bin</b>. As soon as you drop under 15 GB, emails start coming in again.',
+    link:['https://photos.google.com/trash','Open Photos Trash ↗'], dev:'phone', screens:[
+     [photosTop + grid(12) + '<div style="margin-top:8px;text-align:right"><span class="mbtn" style="background:#EA4335">🗑 Delete</span></div>', 80, 76, 'Select all → Delete'],
+     ['<div class="m-top">🗑 Bin</div>' + grid(9, true) + '<div style="margin-top:8px;text-align:right"><span class="mbtn" style="background:#EA4335">Empty bin</span></div>', 76, 66, 'Empty the Bin'],
+     ['<div class="m-top">Storage</div><div style="margin-top:10px;font-weight:800;color:#137333">under 15 GB ✓</div><div class="store"><i style="width:42%;background:#34A853"></i></div><p style="margin-top:12px;color:#5F6368">📩 Emails are coming in again</p>', 50, 40, 'Back under 15 GB'] ] },
+ ],
+ s2: [
+  { t:'Open old Gmail settings', c:'var(--green)', path:['Old Gmail in browser','⚙︎ Settings','See all settings'],
+    p:'Open your <b>old</b> Gmail in a browser, click the ⚙︎ gear at the top-right, then <b>See all settings</b>.',
+    link:['https://mail.google.com/mail/u/0/#settings/general','Open Gmail settings ↗'], dev:'browser', url:'mail.google.com', screens:[
+     [gmTop + '<div style="margin-top:12px"><div class="li">Inbox</div><div class="li">Starred</div><div class="li">Sent</div></div>', 94, 6, 'Click the ⚙︎ gear'],
+     [gmTop + '<div style="margin-top:12px;background:#2D2E30;border-radius:10px;padding:10px"><b>Quick settings</b><div style="margin-top:8px"><span class="mbtn" style="background:#8AB4F8;color:#062E6F">See all settings</span></div></div>', 30, 33, 'See all settings'] ] },
+  { t:'Add a forwarding address', c:'var(--green)', path:['Forwarding and POP/IMAP','Add a forwarding address','new Gmail','Next → Proceed'],
+    p:'Open the <b>Forwarding and POP/IMAP</b> tab, click <b>Add a forwarding address</b>, enter your new Gmail, then Next → Proceed.',
+    link:['https://mail.google.com/mail/u/0/#settings/fwdandpop','Open Forwarding settings ↗'], dev:'browser', url:'mail.google.com/#settings/fwdandpop', screens:[
+     ['<div class="tabs">General · Labels · Accounts · <b>Forwarding and POP/IMAP</b></div><div style="margin-top:14px"><b>Forwarding:</b><div style="margin-top:8px"><span class="mbtn" style="background:#3C4043">Add a forwarding address</span></div></div>', 33, 30, 'Add a forwarding address'],
+     ['<div style="background:#2D2E30;border-radius:10px;padding:12px;margin-top:30px"><b>Add a forwarding address</b><div class="field" style="border-color:#5F6368;color:#8AB4F8">you.new@gmail.com</div><div style="margin-top:10px;text-align:right"><span class="mbtn" style="background:#8AB4F8;color:#062E6F">Next</span></div></div>', 88, 66, 'Enter new Gmail → Next → Proceed'] ] },
+  { t:'Verify in your NEW inbox', c:'var(--green)', path:['New Gmail','Confirmation email','Click the link'],
+    p:'Open your <b>new</b> Gmail inbox, find the forwarding confirmation email and click the verification link.',
+    link:['https://mail.google.com/mail/u/1/#inbox','Open new inbox ↗'], dev:'browser', url:'mail.google.com', screens:[
+     [gmTop + '<div style="margin-top:10px"><div class="li hl" style="background:rgba(251,188,4,.25)">Gmail Team · Gmail Forwarding Confirmation</div><div class="li">Welcome to your new account</div></div>', 50, 22, 'Open the confirmation email'],
+     ['<div style="margin-top:20px;line-height:1.6">you@gmail.com has requested to forward mail to you.<br><br><span class="lnk" style="color:#8AB4F8;text-decoration:underline;font-weight:800">Click here to confirm</span></div>', 34, 54, 'Click the link to confirm'] ] },
+  { t:'Forward a copy + delete Gmail\'s copy → Save', c:'var(--green)', path:['Refresh old Gmail settings','Forward a copy of incoming mail to…','delete Gmail\'s copy','Save Changes'],
+    p:'Back in the <b>old</b> Gmail settings (refresh the page), select <b>Forward a copy of incoming mail to…</b>, choose <b>delete Gmail\'s copy</b> in the dropdown, scroll down and click <b>Save Changes</b>.',
+    link:['https://mail.google.com/mail/u/0/#settings/fwdandpop','Open Forwarding settings ↗'], dev:'browser', url:'mail.google.com/#settings/fwdandpop', screens:[
+     ['<div class="tabs"><b>Forwarding and POP/IMAP</b></div><div class="radio" style="margin-top:12px"><i></i>Disable forwarding</div><div class="radio"><i class="on"></i>Forward a copy of incoming mail to</div><div class="field" style="border-color:#5F6368;color:#8AB4F8;display:inline-block">you.new@gmail.com ▾</div>', 10, 31, 'Select Forward a copy'],
+     ['<div class="radio" style="margin-top:6px"><i class="on"></i>Forward a copy of incoming mail to</div><div style="margin-top:6px">and</div><div class="opts"><div>keep Gmail\'s copy in the Inbox</div><div>mark Gmail\'s copy as read</div><div>archive Gmail\'s copy</div><div class="pick">delete Gmail\'s copy</div></div>', 30, 64, 'Choose delete Gmail\'s copy'],
+     ['<div class="radio" style="margin-top:6px"><i class="on"></i>Forward a copy…</div><div class="dd">delete Gmail\'s copy ▾</div><div style="margin-top:30px"><span class="mbtn" style="background:#8AB4F8;color:#062E6F">Save Changes</span> <b style="color:#81C995">✓ Saved</b></div>', 22, 60, 'Save Changes'] ] },
+ ]
+};
+
+let id = 0;
+const cards = [];
+for (const [sec, list] of Object.entries(STEPS)) {
+  const host = document.getElementById(sec);
+  list.forEach((s, i) => {
+    const k = ++id;
+    const dev = s.dev === 'phone'
+      ? `<div class="phone"><div class="scr">${s.screens.map((sc,j)=>`<div class="screen${j?'':' on'}">${sc[0]}<div class="tap" style="left:${sc[1]}%;top:${sc[2]}%"></div></div>`).join('')}</div></div>`
+      : `<div class="browser"><div class="url">🔒 ${s.url}</div><div class="scr gm">${s.screens.map((sc,j)=>`<div class="screen${j?'':' on'}">${sc[0]}<div class="tap" style="left:${sc[1]}%;top:${sc[2]}%"></div></div>`).join('')}</div></div>`;
+    host.insertAdjacentHTML('beforeend', `
+      <article class="card" style="--c:${s.c}" data-k="${k}">
+        <div class="card-txt">
+          <h3><span class="sn">${sec === 's1' ? '1' : '2'}.${i + 1}</span>${s.t}</h3>
+          <div class="path">${s.path.map((c, j) => `${j ? '<span class="arr">➔</span>' : ''}<span class="chip${j === s.path.length - 1 ? ' hl' : ''}">${c}</span>`).join('')}</div>
+          <p>${s.p}</p>
+          <div class="actions">
+            <a class="btn go" href="${s.link[0]}" target="_blank" rel="noopener">${s.link[1]}</a>
+            <button class="btn done" data-k="${k}">☐ Mark done</button>
+          </div>
+        </div>
+        <div class="stage">${dev}<div class="cap"></div><div class="dots">${s.screens.map((_,j)=>`<button aria-label="screen ${j+1}" class="${j?'':'on'}"></button>`).join('')}</div></div>
+      </article>`);
+    cards.push({ el: host.lastElementChild, s, cur: 0, hold: false });
+  });
+}
+const total = cards.length;
+document.getElementById('pt').textContent = `0 / ${total} done`;
+
+// auto-play each mini screen sequence; dots jump; hover pauses
+const show = (c, j) => {
+  c.cur = j;
+  c.el.querySelectorAll('.screen').forEach((n, q) => n.classList.toggle('on', q === j));
+  c.el.querySelectorAll('.dots button').forEach((n, q) => n.classList.toggle('on', q === j));
+  c.el.querySelector('.cap').textContent = `${j + 1}. ${c.s.screens[j][3]}`;
+  // aim the tap ring at the real target in this screen
+  const scr = c.el.querySelectorAll('.screen')[j];
+  const tgt = scr.querySelector('.pick, .mbtn, .lnk, .sw.on, .radio i.on, .gear, .av, .hl, .dd, .field, .store, .ok');
+  const ring = scr.querySelector('.tap');
+  if (tgt && ring) { const a = scr.getBoundingClientRect(), b = tgt.getBoundingClientRect(); ring.style.left = (b.left - a.left + b.width / 2) + 'px'; ring.style.top = (b.top - a.top + b.height / 2) + 'px'; }
+};
+cards.forEach((c) => {
+  show(c, 0);
+  c.el.querySelectorAll('.dots button').forEach((b, j) => b.addEventListener('click', () => { c.hold = true; show(c, j); }));
+  c.el.querySelector('.stage').addEventListener('mouseenter', () => c.hold = true);
+  c.el.querySelector('.stage').addEventListener('mouseleave', () => c.hold = false);
+});
+setInterval(() => cards.forEach((c) => { if (!c.hold && c.el.classList.contains('in')) show(c, (c.cur + 1) % c.s.screens.length); }), 2300);
+
+// done checkboxes (remembered in this browser only)
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem('gmailfix') || '{}'); } catch (e) {}
+const upd = () => {
+  const n = Object.values(saved).filter(Boolean).length;
+  document.getElementById('pt').textContent = `${n} / ${total} done`;
+  document.getElementById('pb').style.width = `${n / total * 100}%`;
+  document.querySelectorAll('.done').forEach((b) => { const on = !!saved[b.dataset.k]; b.classList.toggle('on', on); b.textContent = on ? '☑ Done' : '☐ Mark done'; });
+};
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('.done'); if (!b) return;
+  saved[b.dataset.k] = !saved[b.dataset.k];
+  try { localStorage.setItem('gmailfix', JSON.stringify(saved)); } catch (err) {}
+  upd();
+});
+upd();
+
+// reveal on scroll
+const io = new IntersectionObserver((es) => es.forEach((x) => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { threshold: .12 });
+cards.forEach((c) => io.observe(c.el));
+
+// copy full guide
+const GUIDE = `2-Step Free Gmail Storage Fix (via TechBabe: IG @techbabecodes & @techbabetalks, YouTube @techbabecodes)
+
+STEP 1: Google Photos Partner Sharing (to free up space)
+1. Old account: Google Photos app ➔ top-right Profile icon ➔ Photos settings ➔ Sharing ➔ Partner sharing.
+2. Add your new free Gmail ➔ select All photos ➔ send the invite.
+3. New account: accept the invite and turn ON "Save to your account" (All photos).
+4. Once all photos are saved to the new account, delete them from the old account and empty the Trash / Bin. As soon as you drop under 15 GB, emails start coming in again.
+
+STEP 2: 0 MB Auto-Forwarding (not in the Gmail app: use a laptop browser or Chrome "Desktop site" on your phone)
+1. Open your old Gmail in a browser ➔ top-right Settings (⚙️) ➔ See all settings.
+2. Forwarding and POP/IMAP tab ➔ Add a forwarding address ➔ enter your new Gmail ➔ Next / Proceed.
+3. Open your new Gmail inbox and click the verification link.
+4. Back in old Gmail settings (refresh) ➔ select "Forward a copy of incoming mail to..."
+5. In the dropdown choose "delete Gmail's copy" ➔ Save Changes.
+
+Done! Every email and OTP sent to your old address now goes straight to your new inbox, using 0 MB on your old account.
+Guide page: ${location.href}`;
+const toast = document.getElementById('toast'); let tm;
+document.getElementById('copyall').addEventListener('click', async () => {
+  let ok = false;
+  try { await navigator.clipboard.writeText(GUIDE); ok = true; } catch (e) { const a = document.createElement('textarea'); a.value = GUIDE; document.body.appendChild(a); a.select(); try { ok = document.execCommand('copy'); } catch (_) {} a.remove(); }
+  toast.textContent = ok ? 'Full guide copied ✓' : 'Copy failed, select the text manually';
+  toast.classList.add('show'); clearTimeout(tm); tm = setTimeout(() => toast.classList.remove('show'), 2200);
+});
+</script>
+</body>
+</html>
