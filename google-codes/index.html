@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>10 Secret Google Codes</title>
+<meta name="description" content="10 secret Google search codes cheat sheet by TechBabe: tap to copy, tap to try on Google.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#4285F4;--red:#EA4335;--yel:#FBBC04;--green:#34A853;
+    --ink:#202124;--sub:#5F6368;--line:#E8EAED;--bg:#F6F8FC;--card:#fff;--hl:#FFE873;--link:#1A0DAB;
+    --shadow:0 1px 3px rgba(32,33,36,.12),0 8px 24px rgba(32,33,36,.08);
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --ink:#E8EAED;--sub:#9AA0A6;--line:#2E3136;--bg:#0F1114;--card:#1A1C20;--hl:#5C4F10;--link:#8AB4F8;
+    --shadow:0 1px 3px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.35);
+  }}
+  :root[data-theme="dark"]{--ink:#E8EAED;--sub:#9AA0A6;--line:#2E3136;--bg:#0F1114;--card:#1A1C20;--hl:#5C4F10;--link:#8AB4F8;--shadow:0 1px 3px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.35)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:Outfit,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;overflow-x:hidden}
+  .bar{height:6px;display:flex}.bar i{flex:1}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px 48px}
+
+  /* hero */
+  .hero{position:relative;text-align:center;padding:40px 0 26px}
+  .bigG{width:min(58vw,260px);margin:0 auto -38px;display:block;animation:float 4s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-10px) rotate(-2deg)}}
+  .strip{position:relative;display:inline-block;background:#202124;border:5px solid #fff;border-radius:20px;padding:4px 26px 8px;transform:rotate(-2deg);box-shadow:0 14px 34px rgba(0,0,0,.25)}
+  .strip h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(38px,10vw,64px);letter-spacing:1px;color:#fff;line-height:1.05}
+  .strip h1 b{color:var(--yel);font-weight:400}
+  .tag{position:absolute;right:-14px;top:-22px;background:var(--yel);color:#202124;font-family:Anton,Impact,sans-serif;font-size:clamp(13px,3.4vw,18px);padding:2px 12px;border-radius:9px;transform:rotate(6deg);white-space:nowrap;box-shadow:0 6px 14px rgba(0,0,0,.25)}
+  .lede{margin:22px auto 0;max-width:520px;color:var(--sub);font-size:17px}
+  .by{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-weight:700;font-size:14px;color:var(--sub)}
+  .dots{display:inline-flex;gap:4px}.dots i{width:8px;height:8px;border-radius:50%}
+
+  /* tools row */
+  .tools{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:6px 0 22px}
+  .btn{appearance:none;border:0;cursor:pointer;font-family:inherit;font-weight:800;font-size:15px;border-radius:999px;padding:11px 18px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:transform .12s,box-shadow .12s}
+  .btn:active{transform:scale(.96)}
+  .btn.primary{background:var(--blue);color:#fff;box-shadow:0 6px 16px rgba(66,133,244,.35)}
+  .btn.ghost{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+  .progress{font-weight:700;color:var(--sub);font-size:14px;align-self:center}
+
+  /* code cards */
+  .card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:18px 18px 16px;margin-bottom:14px;position:relative;border:2px solid transparent;transition:border-color .2s}
+  .card.done{border-color:var(--green)}
+  .head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .num{width:42px;height:42px;border-radius:50%;color:#fff;font-family:Anton,Impact,sans-serif;font-size:22px;display:grid;place-items:center;flex-shrink:0}
+  .code{font-family:"JetBrains Mono",Menlo,monospace;font-weight:700;font-size:clamp(20px,5.6vw,26px);background:var(--hl);color:var(--ink);padding:2px 10px;border-radius:8px;word-break:break-all}
+  .inreel{margin-left:auto;font-size:12px;font-weight:800;color:#fff;background:var(--red);padding:4px 10px;border-radius:999px;white-space:nowrap}
+  .what{margin:10px 0 12px;font-size:16.5px}
+  .search{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:10px 14px;background:var(--card);box-shadow:0 1px 6px rgba(32,33,36,.18);font-family:Arial,sans-serif;font-size:15.5px;overflow:hidden}
+  .search svg{flex-shrink:0}
+  .q{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0}
+  .q mark{background:var(--hl);color:var(--ink);border-radius:4px;padding:0 3px;font-weight:700}
+  .acts{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .acts .btn{font-size:14px;padding:9px 14px}
+  .copy{background:var(--ink);color:var(--card)}
+  .try{background:var(--blue);color:#fff}
+  .tick{background:transparent;color:var(--sub);border:2px solid var(--line)}
+  .card.done .tick{background:var(--green);color:#fff;border-color:var(--green)}
+
+  /* tip + socials */
+  .tip{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:18px;margin:22px 0;border-left:6px solid var(--yel)}
+  .tip b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:22px;letter-spacing:.5px;display:block;margin-bottom:4px}
+  .tip code{font-family:"JetBrains Mono",monospace;background:var(--hl);padding:0 6px;border-radius:5px;font-size:14px;display:inline-block;white-space:nowrap;max-width:100%;overflow-x:auto;margin:3px 0;vertical-align:middle}
+  h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:28px;letter-spacing:.5px;text-align:center;margin:30px 0 12px}
+  .socials{display:grid;grid-template-columns:1fr;gap:10px}
+  @media(min-width:640px){.socials{grid-template-columns:repeat(3,1fr)}}
+  .soc{display:flex;align-items:center;gap:12px;background:var(--card);border-radius:18px;padding:12px 14px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink)}
+  .soc .ic{width:44px;height:44px;border-radius:14px;background:var(--c);display:grid;place-items:center;flex-shrink:0}
+  .soc b{display:block;font-size:16px}.soc small{color:var(--sub);font-size:13px}
+  .foot{text-align:center;color:var(--sub);font-size:13px;margin-top:26px}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,120px);background:#202124;color:#fff;font-weight:700;padding:12px 20px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .25s;z-index:9}
+  .toast.show{transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<div class="bar"><i style="background:var(--blue)"></i><i style="background:var(--red)"></i><i style="background:var(--yel)"></i><i style="background:var(--green)"></i></div>
+<div class="wrap">
+  <header class="hero">
+    <svg class="bigG" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.1C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.4 5.8c4.3-4 6.9-9.9 6.9-17.2z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.1C1 16.6 0 20.2 0 24s1 7.4 2.7 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.8c-2.1 1.4-4.8 2.3-8.5 2.3-6.2 0-11.5-4.1-13.4-9.9l-7.9 6.1C6.6 42.6 14.6 48 24 48z"/></svg>
+    <div class="strip"><h1><b>10</b> SECRET CODES</h1><span class="tag">FASTER THAN PAID AI</span></div>
+    <p class="lede">Search ke aage ye codes lagao aur Google seedha wahi dikhayega jo chahiye. Har code pe <b>Copy</b> dabao, ya <b>Try on Google</b> se example turant chala ke dekho.</p>
+    <div class="by"><span class="dots"><i style="background:var(--blue)"></i><i style="background:var(--red)"></i><i style="background:var(--yel)"></i><i style="background:var(--green)"></i></span>Cheat sheet by @techbabetalks</div>
+  </header>
+
+  <div class="tools">
+    <button class="btn primary" id="copyAll"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#fff" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>Copy full cheat sheet</button>
+    <span class="progress" id="prog">0 / 10 tried</span>
+  </div>
+
+  <main id="list"></main>
+
+  <div class="tip">
+    <b>PRO TIP: CODES MILA KE USE KARO</b>
+    Ek search mein kai codes ek saath lag sakte hain, jaise <code>DSA notes filetype:pdf after:2025</code> ya <code>best earbuds site:reddit.com -boat</code>
+  </div>
+
+  <h2>FOLLOW FOR MORE TECH HACKS</h2>
+  <div class="socials">
+    <a class="soc" href="https://www.instagram.com/techbabetalks" target="_blank" rel="noopener" style="--c:#C13584"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="12" cy="12" r="4" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="#fff"/></svg></span><span><b>@techbabetalks</b><small>Instagram</small></span></a>
+    <a class="soc" href="https://www.instagram.com/techbabecodes" target="_blank" rel="noopener" style="--c:#E1306C"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="12" cy="12" r="4" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="#fff"/></svg></span><span><b>@techbabecodes</b><small>Instagram</small></span></a>
+    <a class="soc" href="https://youtube.com/@techbabecodes" target="_blank" rel="noopener" style="--c:#FF0000"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24"><path fill="#fff" d="M9.5 8.2v7.6l6.6-3.8z"/></svg></span><span><b>@techbabecodes</b><small>YouTube</small></span></a>
+  </div>
+  <p class="foot">Is page ko save kar lo 🔖 · Made with 💙 by TechBabe</p>
+</div>
+<div class="toast" id="toast">Copied ✓</div>
+
+<script>
+const C = ['#4285F4','#EA4335','#FBBC04','#34A853'];
+const CODES = [
+  {code:'filetype:pdf', what:'Direct downloadable PDF nikalne ke liye. <b>pdf</b> ki jagah <b>ppt</b> ya <b>xlsx</b> bhi likh sakte ho.', q:'DSA notes', reel:true},
+  {code:'site:reddit.com', what:'Sponsored articles hata ke sirf Reddit pe <b>real logon ke honest reviews</b> padhne ke liye.', q:'best laptop under 50000', reel:true},
+  {code:'after:2025', what:'Purane outdated articles hata ke sirf <b>latest results</b> dekhne ke liye.', q:'free AI tools', reel:true},
+  {code:'"exact phrase"', what:'Exact wahi line ya error message dhoondhne ke liye. Quotes ke andar likho.', full:'"error code 404 fix"'},
+  {code:'-word', what:'Kisi brand ya unwanted word ko search se <b>hatane</b> ke liye (minus sign lagao).', q:'best earbuds', add:'-boat'},
+  {code:'intitle:keyword', what:'Sirf wahi pages jinke <b>main title</b> mein wo word ho.', full:'intitle:resume template free', mark:'intitle:resume'},
+  {code:'site:gov.in', what:'Sirf <b>official Indian government</b> websites se info nikalne ke liye.', q:'scholarship 2026'},
+  {code:'related:website.com', what:'Kisi bhi website ke <b>similar alternatives</b> dhoondhne ke liye.', full:'related:canva.com', mark:'related:canva.com'},
+  {code:'OR', what:'Do options <b>ek saath</b> search ya compare karne ke liye (capital OR likho).', full:'MacBook Air OR ThinkPad review', mark:'OR'},
+  {code:'define:word', what:'Bina dictionary website khole <b>seedha meaning</b> dekhne ke liye.', full:'define:algorithm', mark:'define:algorithm'},
+];
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+let done = {};
+try { done = JSON.parse(localStorage.getItem('gcodes-done') || '{}') } catch(e) { done = {} }
+const save = () => { try { localStorage.setItem('gcodes-done', JSON.stringify(done)) } catch(e) {} };
+
+const list = document.getElementById('list');
+CODES.forEach((c, i) => {
+  const query = c.full ? c.full : `${c.q} ${c.add || c.code}`;
+  const markTxt = c.full ? (c.mark || c.code) : (c.add || c.code);
+  const qHtml = esc(query).replace(esc(markTxt), `<mark>${esc(markTxt)}</mark>`);
+  const el = document.createElement('section');
+  el.className = 'card' + (done[i] ? ' done' : '');
+  el.innerHTML = `
+    <div class="head">
+      <span class="num" style="background:${C[i % 4]}${i % 4 === 2 ? ';color:#202124' : ''}">${i + 1}</span>
+      <span class="code">${esc(c.code)}</span>
+      ${c.reel ? '<span class="inreel">IN THE REEL</span>' : ''}
+    </div>
+    <p class="what">${c.what}</p>
+    <div class="search" aria-label="Example search">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#9AA0A6" d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 9.5 16a6.5 6.5 0 0 0 4.2-1.6l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+      <span class="q">${qHtml}</span>
+    </div>
+    <div class="acts">
+      <button class="btn copy" data-copy="${esc(query)}">📋 Copy</button>
+      <a class="btn try" href="https://www.google.com/search?q=${encodeURIComponent(query)}" target="_blank" rel="noopener">🔍 Try on Google</a>
+      <button class="btn tick" data-i="${i}">${done[i] ? '✓ Tried' : 'Mark tried'}</button>
+    </div>`;
+  list.appendChild(el);
+});
+
+const toast = document.getElementById('toast');
+let tt;
+const showToast = (m) => { toast.textContent = m; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('show'), 1400) };
+const copyText = async (txt) => {
+  try { await navigator.clipboard.writeText(txt); return true } catch(e) {
+    const ta = document.createElement('textarea'); ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy') } catch(_) {} ta.remove(); return ok }
+};
+const prog = document.getElementById('prog');
+const upd = () => { prog.textContent = `${Object.values(done).filter(Boolean).length} / 10 tried` };
+upd();
+
+list.addEventListener('click', async (e) => {
+  const cp = e.target.closest('[data-copy]');
+  if (cp) { showToast(await copyText(cp.dataset.copy) ? 'Copied ✓' : 'Copy nahi hua, haath se select karo'); return }
+  const tk = e.target.closest('.tick');
+  if (tk) { const i = +tk.dataset.i; done[i] = !done[i]; save(); tk.textContent = done[i] ? '✓ Tried' : 'Mark tried'; tk.closest('.card').classList.toggle('done', !!done[i]); upd(); return }
+  const tr = e.target.closest('.try');
+  if (tr) { const i = +tr.closest('.card').querySelector('.tick').dataset.i; if (!done[i]) { done[i] = true; save(); const tk2 = tr.closest('.card').querySelector('.tick'); tk2.textContent = '✓ Tried'; tr.closest('.card').classList.add('done'); upd() } }
+});
+
+document.getElementById('copyAll').addEventListener('click', async () => {
+  const txt = '10 Secret Google Search Codes 👇\n\n' + CODES.map((c, i) => {
+    const ex = c.full ? c.full : `${c.q} ${c.add || c.code}`;
+    return `${i + 1}. ${c.code} — ${c.what.replace(/<[^>]+>/g, '')} (Example: ${ex})`;
+  }).join('\n') + '\n\nFollow @techbabetalks for more tech hacks 💻✨';
+  showToast(await copyText(txt) ? 'Full cheat sheet copied ✓' : 'Copy nahi hua');
+});
+</script>
+</body>
+</html>
